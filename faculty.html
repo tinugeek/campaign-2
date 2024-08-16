@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Faculty </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    display: grid;
+    margin: 0px;
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+  .container {
+    margin: auto;
+    display: inline-flex;
+} 
+  
+.profile-wrapper {
+    width: 350px;
+    height: 450px;
+    position: relative;
+    margin: 0px 30px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 350px;
+    height: 450px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: 0.5s;
+}
+ 
+.profile .profile-image {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: var(--background);
+    transition: .5s;
+}
+
+.profile-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile:hover img {
+    opacity: 0.4;
+    transition: .5s;
+}
+
+.profile:hover .profile-image {
+    transform: translateY(-104px);
+    transition: all .9s;
+}
+
+.profile:hover .profile-bio {
+    opacity: 0.9; 
+}
+
+.social-icons {
+    position: absolute;
+    display: flex;
+    gap: 12px;
+    z-index: 3;
+    bottom: 164px;
+}
+  
+.social-icons li {
+    list-style: none;
+}
+
+.social-icons li a {
+    position: relative;
+    display: block;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    font-size: 23px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #CDCDCD;
+    border-radius: 8px;
+    transition: .2s;
+    transform: translateY(32px);
+    opacity: 0;
+}
+
+.social-icons li a:hover {
+    background: var(--background);
+    transition: .2s;
+}
+
+.social-icons li a svg {
+    color: var(--background);
+    transition: .2s;
+}
+
+.social-icons li a:hover svg {
+    color: white;
+    transition: 0.8s;
+    transform: rotateY(360deg);
+}
+
+.profile:hover .social-icons li a {
+    opacity: 1; 
+}
+
+.profile:hover li:nth-child(1) a {
+    transition-delay: 0.1s;
+}
+
+.profile:hover li:nth-child(2) a {
+    transition-delay: 0.2s;
+}
+
+.profile:hover li:nth-child(3) a {
+    transition-delay: 0.3s;
+}
+
+.profile:hover li:nth-child(4) a {
+    transition-delay: 0.4s;
+}
+
+.profile-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    height: 106px;
+    padding: 12px 14px;
+    z-index: 1;
+    color: #333;
+    background-color: #fff;
+    text-align: left;
+}
+
+.profile:hover .profile-name {
+    background-color: #fff;
+}
+
+.profile-name h2 {
+    margin-bottom: 8px;
+}
+</style>
+
+   </head>
+<body>
+
+  
+
+
+    <canvas></canvas>
+
+  
+     <div class="navbar" style="padding: 20px;">
+      <div class="navbar-logo"><h1 class="imge" >FACULTY</h1></div>
+      <ul class="navbar-menu">
+        <li><a href="home.html" class="link ">Home</a></li>
+        <li><a href="about.html" class="link ">About</a></li>
+        <li><a href="faculty.html" class="link ">Faculty</a></li>
+        <li><a href="feeStructure.html" class="link ">Fee Structure</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.gov.thecoachinginstitute&pcampaignid=web_share" class="link ">Android App</a></li>
+      </ul>
+
+      <div class="navbar-hamburger">
+        &#9776;       
+      </div>
+
+      
+    </div> 
+
+    <div class="background-container"></div>
+    <div class="content" id="mainContent">
+
+      <div class="container">       
+        <div class="profile-wrapper">
+            <div class="profile">
+                <div class="profile-image">
+                    <img
+                        src="src/images/vivek.jpg"
+                        alt="Profile"
+                    >
+                </div>
+                <ul class="social-icons">
+                    <li>
+                        <a href="https://www.instagram.com/singh_dhananjay19?igsh=MTlxbzV3MW83OTFydw==" title="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                                 stroke-linecap="round" stroke-linejoin="round"
+                            >
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.threads.net/@singh_dhananjay19" title="Threads">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" 
+                                 fill="none" stroke-linecap="round" stroke-linejoin="round"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M19 7.5c-1.333 -3 -3.667 -4.5 -7 -4.5c-5 0 -8 2.5 -8 9s3.5 9 8 9s7 -3 7
+                                        -5s-1 -5 -7 -5c-2.5 0 -3 1.25 -3 2.5c0 1.5 1 2.5 2.5 2.5c2.5 0 3.5 -1.5 
+                                        3.5 -5s-2 -4 -3 -4s-1.833 .333 -2.5 1"
+                                >
+                                </path>
+                             </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/dhananjay-myprofile?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="Linkedin">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                 fill="none" stroke-linecap="round" stroke-linejoin="round"
+                            >
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 
+                                         2 0 0 1 -2 -2z">
+                                </path>
+                                <path d="M8 11l0 5"></path>
+                                <path d="M8 8l0 .01"></path>
+                                <path d="M12 16l0 -5"></path>
+                                <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+                             </svg>
+                        </a>
+                    </li>
+                    <li>
+                      <a href="#twitter" title="Resume">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <!-- Clear any previous fill and stroke -->
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <!-- Icon representing a resume -->
+                          <rect x="6" y="5" width="12" height="14" rx="2"></rect>
+                          <path d="M6 10h12"></path>
+                          <path d="M6 14h6"></path>
+                      </svg>
+                      
+                      
+                      </a>
+                  </li>
+                </ul>
+                <div class="profile-name">
+                    <h2>Vivek Pandey</h2>
+                    <div class="profile-bio">
+                        I'm a JavaScript full-stack engineer, 
+                        love working with <em>React</em> and <em>Node.js</em>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-wrapper">
+          <div class="profile">
+              <div class="profile-image">
+                  <img
+                      src="src/images/DS_profile.jpeg"
+                      alt="Profile"
+                  >
+              </div>
+              <ul class="social-icons">
+                  <li>
+                      <a href="https://www.instagram.com/singh_dhananjay19?igsh=MTlxbzV3MW83OTFydw==" title="Instagram">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                               stroke-linecap="round" stroke-linejoin="round"
+                          >
+                              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                          </svg>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.threads.net/@singh_dhananjay19" title="Threads">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                               viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" 
+                               fill="none" stroke-linecap="round" stroke-linejoin="round"
+                          >
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                              <path d="M19 7.5c-1.333 -3 -3.667 -4.5 -7 -4.5c-5 0 -8 2.5 -8 9s3.5 9 8 9s7 -3 7
+                                      -5s-1 -5 -7 -5c-2.5 0 -3 1.25 -3 2.5c0 1.5 1 2.5 2.5 2.5c2.5 0 3.5 -1.5 
+                                      3.5 -5s-2 -4 -3 -4s-1.833 .333 -2.5 1"
+                              >
+                              </path>
+                           </svg>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.linkedin.com/in/dhananjay-myprofile?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="Linkedin">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                               viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                               fill="none" stroke-linecap="round" stroke-linejoin="round"
+                          >
+                              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                              <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 
+                                       2 0 0 1 -2 -2z">
+                              </path>
+                              <path d="M8 11l0 5"></path>
+                              <path d="M8 8l0 .01"></path>
+                              <path d="M12 16l0 -5"></path>
+                              <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+                           </svg>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="" title="Resume">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Clear any previous fill and stroke -->
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <!-- Icon representing a resume -->
+                        <rect x="6" y="5" width="12" height="14" rx="2"></rect>
+                        <path d="M6 10h12"></path>
+                        <path d="M6 14h6"></path>
+                    </svg>
+                    
+                    
+                    </a>
+                </li>
+              </ul>
+              <div class="profile-name">
+                  <h2>Dhananjay Singh</h2>
+                  <div class="profile-bio">
+                      I'm a JavaScript full-stack engineer, 
+                      love working with <em>React</em> and <em>Node.js</em>.
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="profile-wrapper">
+        <div class="profile">
+            <div class="profile-image">
+                <img
+                    src="src/images/tabish.jpg"
+                    alt="Profile"
+                >
+            </div>
+            <ul class="social-icons">
+                <li>
+                    <a href="https://www.instagram.com/singh_dhananjay19?igsh=MTlxbzV3MW83OTFydw==" title="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+                             stroke-linecap="round" stroke-linejoin="round"
+                        >
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://www.threads.net/@singh_dhananjay19" title="Threads">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" 
+                             fill="none" stroke-linecap="round" stroke-linejoin="round"
+                        >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M19 7.5c-1.333 -3 -3.667 -4.5 -7 -4.5c-5 0 -8 2.5 -8 9s3.5 9 8 9s7 -3 7
+                                    -5s-1 -5 -7 -5c-2.5 0 -3 1.25 -3 2.5c0 1.5 1 2.5 2.5 2.5c2.5 0 3.5 -1.5 
+                                    3.5 -5s-2 -4 -3 -4s-1.833 .333 -2.5 1"
+                            >
+                            </path>
+                         </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/dhananjay-myprofile?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="Linkedin">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                             fill="none" stroke-linecap="round" stroke-linejoin="round"
+                        >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 
+                                     2 0 0 1 -2 -2z">
+                            </path>
+                            <path d="M8 11l0 5"></path>
+                            <path d="M8 8l0 .01"></path>
+                            <path d="M12 16l0 -5"></path>
+                            <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+                         </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#twitter" title="Resume">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <!-- Clear any previous fill and stroke -->
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <!-- Icon representing a resume -->
+                        <rect x="6" y="5" width="12" height="14" rx="2"></rect>
+                        <path d="M6 10h12"></path>
+                        <path d="M6 14h6"></path>
+                    </svg>
+                    
+                    
+                    </a>
+                </li>
+            </ul>
+            <div class="profile-name">
+                <h2>Syed Shah Tabish</h2>
+                <div class="profile-bio">
+                    I'm a JavaScript full-stack engineer, 
+                    love working with <em>React</em> and <em>Node.js</em>.
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+       
+      
+      </div>
+
+      <div class="footer container">
+        <div class="social-media-buttons">
+          <button class="social-media-button" style="padding: 10px 0px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </button>
+          <button class="social-media-button" style="padding: 10px 0px;">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
+          </button>
+          <button class="social-media-button" style="padding: 10px 0px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+          </button>
+          <button class="social-media-button" style="padding: 10px 0px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </button>
+      </div>
+        <div class="row" style="margin: auto;"><p >© 2020 Copyright: The Coaching Institute</p></div>
+       <img src="src/images/location.gif" width="50" height="50"/>
+      </div>
+
+<script src="script.js"></script>
+
+
+
+
+</body>
+</html>
